@@ -23,3 +23,12 @@
     display: flex;
     justify-content: flex-end;
 }
+a.btn.btn-primary.active {
+    margin-left: 10px;
+}
+body{
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image: url(https://aphoto.vn/wp-content/uploads/2018/02/anh-chup-dien-thoai-dep-1.jpg);
+
+}

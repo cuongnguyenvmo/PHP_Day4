@@ -10,8 +10,18 @@
     <link href="css/style.css" rel="stylesheet">
 </head>
 <body>
+<style>
+                body{
+                        background-size: cover;
+                        background-repeat:no-repeat;
+                        background-image: url(https://img.nhandan.com.vn/Files/Images/2020/07/26/nhat_cay-1595747664059.jpg)
+                }
+            </style>
     <div class="container">
+
     <h4 class="display-4 text-center">READ</h4><br>
+    <br />
+    <br />
     <?php if (isset($_GET['success'])) { ?>
         <div class="alert alert-success" role="alert">
             <?php echo $_GET['success'] ?>
@@ -26,6 +36,7 @@
             <th scope="col">#</th>
             <th scope="col">Name</th>
             <th scope="col">Email</th>
+            <th scope="col">Tùy Chọn</th>
             </tr>
         </thead>
         <tbody>
@@ -37,13 +48,25 @@
             <th scope="row"><?=$i?></th>
             <td><?php echo $rows['user']; ?></td>
             <td><?php echo $rows['email']; ?></td>
+            <td>   <a href="update.php?id=<?=$rows['id']?>"
+                   class="btn btn-success">Update</a>
+                   <a href="php/delete.php?id=<?=$rows['id']?>"
+                   onclick="return confirm('Bạn có chắc muốn xóa ko?');"
+                   class="btn btn-danger">Delete</a></td>
+                   </td>
+                
             </tr>
             <?php } ?>
         </tbody>
         </table>
         <?php } ?>
             <div class="link-right">
-                <a href="index.php" class="link-primary">Create</a>
+                <a href="index.php" 
+                class="btn btn-primary active" aria-current="page"
+                >Create</a>
+                <a href="php/search.php" 
+                class="btn btn-primary active" aria-current="page"
+                >Search</a>
             </div>
         </div>
 </div>
